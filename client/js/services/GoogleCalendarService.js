@@ -52,7 +52,55 @@ angular.module('GoogleCalendarService', [], function($provide){
 				});
 
 				return defer.promise;
-			}
+			},
+
+			updateEvent: function(scheduledDate, endDate, contactInfo){
+				var defer = $q.defer();
+
+				var getData = {
+					startdate: scheduledDate,
+					enddate: endDate,
+					contact: contactInfo
+				};
+
+				$http.update(baseUrl+'/event', updateData, {'Content-Type':  'application/json'}).then(function(response){
+					console.log('Update Event Response:', response);
+
+					if(response.status == 200){
+						$scope.$broadcast('eventUpdatedSuccess', response.data);
+						defer.resolve(response.data);
+					}
+					else{
+						$scope.$broadcast('GoogleError', response.data);
+						defer.reject(response.data)
+					}
+				});
+
+				return defer.promise;
+			},
+
+
+			deleteEvent: function(){
+				var defer = $q.defer();
+
+				$http.delete(baseUrl+'/event').then(function(response){
+
+					console.log(response);
+
+					if(response.status == 200){
+						$scope.$broadcast('GoogleEventDeleted', response.data.items);
+						defer.resolve(response.data.items);
+					}
+
+					else{
+						$scope.$broadcast('GoogleError', response.data);
+						defer.reject(response.data);
+					}
+
+				});
+
+				return defer.promise;
+			},
 		};
 
 	});

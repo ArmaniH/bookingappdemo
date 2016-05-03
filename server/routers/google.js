@@ -42,6 +42,7 @@ router.post('/event', function(req, res, next) {
     var addEventBody = {
         'status':'confirmed',
         'summary': req.body.contact.firstName + ' ' + req.body.contact.lastName,
+        'location': req.body.contact.location,
         'description': req.body.contact.phone + '\n' + req.body.contact.details,
         'organizer': {
           'email': req.session.calendarId,

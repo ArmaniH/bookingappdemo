@@ -4,7 +4,9 @@
 		<input ng-switch-when="text" ng-model="$parent.ngModel" type="{{type}}" class="form-control" id="{{id}}" placeholder="{{placeholder}}" ng-required="required">
 		<input ng-switch-when="email" ng-model="$parent.ngModel" type="{{type}}" class="form-control" id="{{id}}" placeholder="{{placeholder}}" ng-required="required">
 		<input ng-switch-when="tel" ng-model="$parent.ngModel" type="{{type}}" class="form-control" id="{{id}}" placeholder="{{placeholder}}" ng-required="required">
-		<textarea ng-switch-when="textarea" ng-model="$parent.ngModel" class="form-control" rows="3" id="{{id}}" ng-required="required"></textarea>
+		<input ng-switch-when="location" ng-model="$parent.ngModel" type="{{type}}" class="form-control" id="{{id}}" placeholder="{{placeholder}}" ng-required="required">
+		<input ng-switch-when="services" ng-model="$parent.ngModel" type="{{type}}" class="form-control" id="{{id}}" placeholder="{{placeholder}}" ng-required="required">
+		<textarea ng-switch-when="textarea" ng-model="$parent.ngModel" class="form-control" rows="5" id="{{id}}" ng-required="required"></textarea>
 		<div ng-switch-default></div>
 	</div>
 </div>

@@ -12,9 +12,7 @@
             <inputfield ng-model="$parent.contactInfo.lastName" type="text" label="Last Name" placeholder="Enter last name..." id="lastName" required></inputfield>
             <inputfield ng-model="$parent.contactInfo.email" type="email" label="Email" placeholder="Enter email address..." id="email" required></inputfield>
             <inputfield ng-model="$parent.contactInfo.phone" type="tel" label="Phone" placeholder="Enter phone number..." id="phone" required></inputfield>
-            <inputfield ng-model="$parent.contactInfo.location" type="textarea" label="Location" placeholder="Enter location..." id="location"></inputfield>
-            <inputfield ng-model="$parent.contactInfo.details" type="textarea" label="Services" placeholder="Services..." id="details"></inputfield>
-
+            <inputfield ng-model="$parent.contactInfo.details" type="textarea" label="Details" id="details"></inputfield>
             <!-- <div class="form-group"> -->
                 <!-- <div>
                     <input type="time" class="form-control" id="startTimeInput" ng-model="event.startTime" required>
@@ -43,7 +41,7 @@
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" ng-disabled="contactForm.$invalid || timeForm.$invalid" ng-click="addEvent()">Add Event</button>
+        <button type="button" class="btn btn-primary" ng-disabled="contactForm.$invalid || timeForm.$invalid" ng-click="addEvent()">Update Event</button>
         <button type="button" class="btn btn-default" ng-click="$hide()">Close</button>
       </div>
     </div>
